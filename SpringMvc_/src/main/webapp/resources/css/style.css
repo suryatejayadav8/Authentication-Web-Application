@@ -1,0 +1,302 @@
+/* ============================================
+   Employee Management System — Stylesheet
+   Palette: deep slate + amber accent
+   ============================================ */
+
+:root {
+  --ink: #16202a;
+  --slate: #2c3e50;
+  --slate-light: #46596b;
+  --paper: #f6f4ef;
+  --card: #ffffff;
+  --accent: #c9852a;
+  --accent-dark: #a56a1c;
+  --line: #e3ded3;
+  --success: #2f7d5c;
+  --success-bg: #e7f5ee;
+  --danger: #b33f3f;
+  --danger-bg: #fbeaea;
+  --radius: 10px;
+  --shadow: 0 2px 10px rgba(22, 32, 42, 0.07);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ---------- Top bar ---------- */
+.topbar {
+  background: var(--ink);
+  color: #fff;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.topbar .brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.topbar .brand-mark {
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+.topbar .brand-tag {
+  font-size: 0.8rem;
+  color: #b8c2cc;
+}
+
+/* ---------- Page container ---------- */
+.page {
+  max-width: 980px;
+  margin: 32px auto;
+  padding: 0 20px 60px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.page-header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--slate);
+}
+
+.page-header .subtitle {
+  color: var(--slate-light);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.15s ease;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--accent-dark); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--slate);
+}
+.btn-outline:hover { border-color: var(--slate-light); }
+
+.btn-danger {
+  background: transparent;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+.btn-danger:hover { background: var(--danger-bg); }
+
+.btn-sm { padding: 6px 12px; font-size: 0.8rem; }
+
+/* ---------- Flash messages ---------- */
+.alert {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+}
+.alert-success { background: var(--success-bg); color: var(--success); border-color: #bfe3d2; }
+.alert-error   { background: var(--danger-bg);  color: var(--danger);  border-color: #edc4c4; }
+
+/* ---------- Card / table ---------- */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+table.emp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.emp-table thead th {
+  text-align: left;
+  background: var(--slate);
+  color: #fff;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+}
+
+.emp-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+
+.emp-table tbody tr:last-child td { border-bottom: none; }
+.emp-table tbody tr:hover { background: #faf8f3; }
+
+.emp-id {
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.actions-cell {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--slate-light);
+}
+
+/* ---------- Form ---------- */
+.form-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  padding: 28px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-group { margin-bottom: 18px; }
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--slate);
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fdfcfa;
+  color: var(--ink);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201, 133, 42, 0.15);
+}
+
+.form-group input:disabled {
+  background: #f0ede6;
+  color: var(--slate-light);
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.hint {
+  font-size: 0.78rem;
+  color: var(--slate-light);
+  margin-top: 4px;
+}
+
+/* ---------- Detail view ---------- */
+.detail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.detail-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.detail-list li:last-child { border-bottom: none; }
+.detail-list .label { color: var(--slate-light); font-size: 0.85rem; }
+.detail-list .value { font-weight: 600; color: var(--ink); }
+
+/* ---------- Responsive: stack table into cards on small screens ---------- */
+@media (max-width: 640px) {
+  .topbar { padding: 14px 18px; }
+  .page { margin: 20px auto; padding: 0 14px 40px; }
+
+  .page-header h1 { font-size: 1.25rem; }
+
+  .emp-table thead { display: none; }
+
+  .emp-table, .emp-table tbody, .emp-table tr, .emp-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .emp-table tr {
+    border-bottom: 8px solid var(--paper);
+    padding: 10px 4px;
+  }
+
+  .emp-table td {
+    border: none;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .emp-table td::before {
+    content: attr(data-label);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--slate-light);
+    font-weight: 700;
+  }
+
+  .actions-cell { justify-content: flex-end; }
+
+  .form-card { padding: 20px; }
+  .form-actions { flex-direction: column; }
+  .form-actions .btn { width: 100%; justify-content: center; }
+}
