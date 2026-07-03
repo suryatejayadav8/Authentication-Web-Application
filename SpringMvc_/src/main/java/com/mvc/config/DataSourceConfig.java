@@ -29,7 +29,7 @@ public class DataSourceConfig {
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/crt");
         ds.setUsername("root");
-        ds.setPassword("Teja@4137");
+        ds.setPassword("******");
 
         return ds;
     }
