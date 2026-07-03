@@ -99,7 +99,7 @@ Install the following software before running the project:
 Create a database:
 
 ```sql
-CREATE DATABASE authentication_db;
+CREATE DATABASE crt;
 ```
 
 Create the users table:
